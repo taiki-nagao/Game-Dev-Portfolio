@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Taiki Joshua Nagao's software and game-development portfolio: a Unity multiplayer prototype and released educational software.">
+  <title>Taiki Joshua Nagao | Software & Game Development</title>
+  <style>
+    :root { color-scheme: light; --ink:#182536; --muted:#536070; --line:#dce2e8; --paper:#f5f7fa; --accent:#235ac4; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--ink); background:var(--paper); line-height:1.65; }
+    a { color:var(--accent); text-underline-offset:4px; }
+    a:focus-visible { outline:3px solid var(--accent); outline-offset:5px; }
+    [hidden] { display:none !important; }
+    .skip { position:absolute; left:16px; top:-80px; background:white; padding:10px; }
+    .skip:focus { top:12px; z-index:2; }
+    .wrap { width:min(1080px, calc(100% - 48px)); margin:auto; }
+    header { background:#fff; border-bottom:1px solid var(--line); }
+    .nav { display:flex; justify-content:space-between; align-items:center; gap:24px; padding:22px 0; }
+    .brand { font-weight:700; color:var(--ink); text-decoration:none; }
+    nav { display:flex; gap:22px; font-size:14px; }
+    nav a { color:var(--muted); text-decoration:none; }
+    .hero { padding:65px 0 48px; max-width:850px; }
+    .eyebrow { color:var(--accent); font-size:12px; text-transform:uppercase; font-weight:700; letter-spacing:1.8px; margin:0 0 12px; }
+    h1 { font-size:clamp(34px, 5vw, 55px); letter-spacing:-1.6px; line-height:1.12; margin:0 0 20px; }
+    .intro { max-width:760px; font-size:18px; color:var(--muted); }
+    .tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+    .tag { background:#e8eef8; color:#21457d; padding:5px 12px; border-radius:6px; font-size:13px; }
+    .actions { display:flex; flex-wrap:wrap; gap:18px; margin-top:22px; }
+    .button { display:inline-block; background:var(--accent); color:white; border-radius:6px; padding:10px 18px; text-decoration:none; font-size:14px; font-weight:700; }
+    .panel { background:#fff; border:1px solid var(--line); border-radius:12px; padding:32px; margin-bottom:28px; }
+    .section-top { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; }
+    h2 { font-size:27px; line-height:1.25; margin:0 0 10px; letter-spacing:-.5px; }
+    h3 { font-size:17px; margin:0 0 8px; }
+    p { margin:0 0 16px; }
+    .muted { color:var(--muted); }
+    .status { display:inline-block; white-space:nowrap; font-size:12px; font-weight:700; color:#785615; background:#fff4da; padding:5px 10px; border-radius:5px; }
+    .video { margin:24px 0; aspect-ratio:16/9; border-radius:8px; overflow:hidden; background:#edf1f6; border:1px solid var(--line); display:grid; place-items:center; }
+    .video iframe { width:100%; height:100%; border:0; }
+    .placeholder { text-align:center; padding:24px; color:var(--muted); max-width:540px; }
+    .placeholder strong { display:block; font-size:20px; color:var(--ink); margin-bottom:8px; }
+    .columns { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:24px; }
+    .columns p { font-size:14px; color:var(--muted); margin-bottom:0; }
+    .scope { font-size:14px; color:var(--muted); border-top:1px solid var(--line); padding-top:18px; margin:26px 0 0; }
+    .gallery { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:20px; }
+    figure { margin:0; }
+    figure img { width:100%; display:block; aspect-ratio:16/10; object-fit:contain; background:#edf1f6; border:1px solid var(--line); border-radius:6px; }
+    figcaption { font-size:13px; color:var(--muted); padding-top:8px; }
+    .image-error { background:#fff4da; padding:18px; font-size:14px; }
+    footer { color:var(--muted); padding:8px 0 34px; font-size:13px; }
+    @media (max-width:700px) {
+      .wrap { width:calc(100% - 32px); }
+      .nav { align-items:flex-start; flex-direction:column; gap:8px; }
+      .hero { padding-top:40px; }
+      .panel { padding:22px; }
+      .section-top { flex-direction:column; gap:8px; }
+      .columns, .gallery { grid-template-columns:1fr; }
+      h2 { font-size:24px; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#main">Taiki Joshua Nagao</a>
+    <nav aria-label="Main navigation"><a href="#game">Game project</a><a href="#released">Released work</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+  <section class="hero" aria-labelledby="page-title">
+    <p class="eyebrow">Engineering portfolio</p>
+    <h1 id="page-title">Software &amp;<br>game development.</h1>
+    <p class="intro">I'm Taiki Joshua Nagao, an Electrical and Computer Engineering student at Carnegie Mellon University. My work spans multiplayer gameplay, web applications, and hardware–software integration.</p>
+    <div class="tags" aria-label="Featured technologies"><span class="tag">C#</span><span class="tag">Unity 6</span><span class="tag">Mirror</span><span class="tag">Python</span></div>
+    <div class="actions"><a class="button" href="#game">Explore the game project</a><a id="resume-link" class="button" hidden>View résumé</a></div>
+  </section>
+
+  <section id="game" class="panel" aria-labelledby="game-title">
+    <div class="section-top"><div><p class="eyebrow">Independent development</p><h2 id="game-title">3D multiplayer combat prototype</h2></div><span class="status">In development</span></div>
+    <p class="muted">An independent Unity project focused on real-time combat, multiplayer interactions, and procedural environment tools.</p>
+    <div id="video-container" class="video">
+      <div class="placeholder"><strong>Gameplay demonstration coming soon</strong><span>Footage will focus on combat interactions and the multiplayer training environment.</span></div>
+    </div>
+    <p id="video-fallback" hidden><a id="video-link" target="_blank" rel="noopener noreferrer">Watch the demonstration on YouTube</a></p>
+    <noscript><p class="muted">Enable JavaScript to load configured demonstration media. The project overview is available below.</p></noscript>
+    <div class="columns">
+      <div><h3>Combat architecture</h3><p>I define gameplay requirements and architecture, write initial C# implementations, and review and debug subsequent revisions.</p></div>
+      <div><h3>Multiplayer debugging</h3><p>I use a training dummy that can cast player spells to reproduce and investigate combat interactions in a multiplayer environment.</p></div>
+      <div><h3>World-building tools</h3><p>Procedural terrain generation and custom Unity Editor tooling support map creation and object placement. This work is still in progress.</p></div>
+    </div>
+    <p class="scope"><strong>Current scope:</strong> Combat functionality is the project's main working focus. Terrain generation remains in development. This page is a development showcase, not a released game or a claim of production-scale validation.</p>
+  </section>
+
+  <section id="screenshots-section" class="panel" aria-labelledby="screenshots-title" hidden>
+    <p class="eyebrow">Project captures</p><h2 id="screenshots-title">Screenshots</h2>
+    <div id="gallery" class="gallery"></div>
+  </section>
+
+  <section id="released" class="panel" aria-labelledby="released-title">
+    <p class="eyebrow">Released project</p><h2 id="released-title">Retro Math</h2>
+    <p class="muted">An educational game built with Python and Pygame. I developed the game and handled packaging, compatibility, and release testing.</p>
+    <a href="https://japaneseonion.itch.io/retro-math" target="_blank" rel="noopener noreferrer">View Retro Math on itch.io ↗</a>
+  </section>
+</main>
+<footer class="wrap">Taiki Joshua Nagao · Software &amp; game development</footer>
+
+<script>
+  // EDIT THESE SETTINGS. Leave entries blank until you have public-safe material.
+  // Use a YouTube watch or youtu.be link. Do not paste an entire iframe here.
+  const SHOWCASE = {
+    youtubeUrl: "",
+    screenshots: [
+      // Example after you upload the actual files beside index.html:
+      // { file: "combat.png", caption: "Combat interaction in a multiplayer test session." },
+      // { file: "terrain.png", caption: "Procedural terrain — work in progress." }
+    ],
+    // Optional: upload a public-safe résumé PDF, then enter its filename here.
+    resumeFile: ""
+  };
+
+  // These helpers populate the media sections. No packages or build step required.
+  function youtubeId(value) {
+    try {
+      const url = new URL(value);
+      const host = url.hostname.toLowerCase().replace(/^www\./, "");
+      let id = "";
+      if (host === "youtu.be") id = url.pathname.split("/")[1] || "";
+      else if (["youtube.com", "m.youtube.com", "youtube-nocookie.com"].includes(host)) {
+        id = url.searchParams.get("v") || "";
+        if (!id && /^\/(embed|shorts)\//.test(url.pathname)) id = url.pathname.split("/")[2] || "";
+      }
+      return /^[A-Za-z0-9_-]{11}$/.test(id) ? id : null;
+    } catch (_) { return null; }
+  }
+
+  function localAsset(value) {
+    // Keep assets inside this portfolio, not remote files or parent directories.
+    return typeof value === "string" && /^[A-Za-z0-9][A-Za-z0-9_./-]*$/.test(value)
+      && !value.split("/").includes("..");
+  }
+
+  const id = youtubeId(SHOWCASE.youtubeUrl);
+  if (id) {
+    const frame = document.createElement("iframe");
+    frame.src = "https://www.youtube-nocookie.com/embed/" + id;
+    frame.title = "3D multiplayer game — development demonstration";
+    frame.loading = "lazy";
+    frame.referrerPolicy = "strict-origin-when-cross-origin";
+    frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    frame.allowFullscreen = true;
+    document.getElementById("video-container").replaceChildren(frame);
+    document.getElementById("video-link").href = "https://www.youtube.com/watch?v=" + id;
+    document.getElementById("video-fallback").hidden = false;
+  } else if (SHOWCASE.youtubeUrl) {
+    console.warn("Portfolio: use a valid YouTube watch or youtu.be URL.");
+  }
+
+  const images = SHOWCASE.screenshots.filter(item => item && localAsset(item.file));
+  if (images.length) {
+    const gallery = document.getElementById("gallery");
+    for (const item of images) {
+      const figure = document.createElement("figure");
+      const image = document.createElement("img");
+      image.src = item.file;
+      image.alt = item.caption || "Game development screenshot";
+      image.loading = "lazy";
+      image.addEventListener("error", () => {
+        const notice = document.createElement("p");
+        notice.className = "image-error";
+        notice.textContent = "Image not found: " + item.file;
+        image.replaceWith(notice);
+      }, { once:true });
+      const caption = document.createElement("figcaption");
+      caption.textContent = item.caption || "Game development screenshot";
+      figure.append(image, caption);
+      gallery.append(figure);
+    }
+    document.getElementById("screenshots-section").hidden = false;
+  }
+  if (localAsset(SHOWCASE.resumeFile)) {
+    const link = document.getElementById("resume-link");
+    link.href = SHOWCASE.resumeFile;
+    link.hidden = false;
+  }
+</script>
+</body>
+</html>
